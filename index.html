@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Proyecto</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./server.js"></script>
+</head>
+
+<body>
+
+    <h3>Formulario</h3>
+    <!-- Numero de patente -->
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="patente">Numero de patente</span>
+        </div>
+        <input type="text" class="form-control form" id="patente" placeholder="Ingrese N° Patente" aria-label="Nombre" aria-describedby="name">
+    </div>
+    <div class="alert alert-danger error" id="error_patentente" role="alert">
+        <p>Debe ingresar el Numero de patente</p>
+    </div>
+
+    <!-- Año -->
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <span class="input-group-text" id="año">Año</span>
+        </div>
+        <input type="number" class="form-control form" id="año" placeholder="Ingrese Año" aria-label="Apellido Paterno" aria-describedby="last_name">
+    </div>
+    <div class="alert alert-danger error" id="error_año" role="alert">
+        <p>Debe ingresar el Año</p>
+    </div>
+
+    <!-- Modelo -->
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">Modelo</label>
+        </div>
+        <select class="custom-select" id="modelo">
+        <option value="0" selected>Seleccione el Modelo del auto</option>
+        <option value="1">Coupé</option>
+        <option value="2">Sedán</option>
+        <option value="3">Citycar</option>
+        <option value="4">Camioneta</option>
+        <option value="5">SUV</option>
+      </select>
+    </div>
+    <div class="alert alert-danger error" id="error_modelo" role="alert">
+        <p>Debe ingresar el Modelo del Auto</p>
+    </div>
+
+    <!-- Marca -->
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect02">Marca</label>
+        </div>
+        <select class="custom-select form" id="marca">
+        <option selected value="0">Seleccione la Marca del Auto</option>
+        <option value="1">Toyota Yaris</option>
+        <option value="2">Volkswagen Gol</option>
+        <option value="3">Kia Morning</option>
+        <option value="4">Ford Ranger</option>
+        <option value="5">MG ZS</option>
+      </select>
+    </div>
+    <div class="alert alert-danger error" id="error_marca" role="alert">
+        <p>Debe seleccionar la Marca</p>
+    </div>
+    <!-- Boton -->
+    <div class="input-group">
+        <button class="btn btn-lg btn-danger" onclick="guardar() ">Guardar Hora</button>
+    </div>
+
+    <!-- Registros -->
+    <section id="respuesta"></section>
+</body>
+
+</html>
