@@ -1,7 +1,7 @@
 // funcion formato flecha
 let mensajes = []
 
-let guardar  = () => {
+let guardar = () => {
 
     let message = document.getElementById("message")
     let last_name = document.getElementById("last_name")
@@ -11,19 +11,14 @@ let guardar  = () => {
     let error_last_name = document.getElementById("error_last_name")
     let error_message = document.getElementById("error_message")
 
-    if(existsErrors(
-            message, last_name, name, 
-            error_name, error_last_name, 
-            error_message
-        )
-    ){
-        // Logica en caso de que existan errores
-    }else{
-        // Forma alternativa de declarar objetos
-        // let objeto = new Object()
-        // objeto.nombre = name.value
-        // objeto.apellido =  last_name.value
-        // objeto.message = message.value
+    if (existsErrors(
+        message, last_name, name,
+        error_name, error_last_name,
+        error_message
+    )
+    ) {
+    } else {
+
 
         let objeto = {
             nombre: name.value,
@@ -35,44 +30,44 @@ let guardar  = () => {
 
         let elemento_response = document.getElementById("response")
         let cadena = objeto.nombre + " " + objeto.apellido
-        cadena = cadena + "" +objeto.message
+        cadena = cadena + " " + objeto.message
 
         elemento_response.innerHTML = cadena
 
     }
 
-    
+
 
 }
 
 
-function existsErrors(message, last_name, name, error_name, error_last_name, error_message){
+function existsErrors(message, last_name, name, error_name, error_last_name, error_message) {
     let errors = []
     // Valido que el nombre fue ingresado
-    if( name.value == ""){
+    if (name.value == "") {
         errors.push("Debe ingresar el nombre")
         error_name.innerHTML = "Debe ingresar su nombre."
         error_name.classList.remove("escondido")
         // Cambiar placeholder de input referenciando el atributo
         name.setAttribute("placeholder", "debe ingresar su nombre")
-    }else{
+    } else {
         error_name.classList.add("escondido")
     }
 
     // Valido que el apellido fue ingresado
-    if( last_name.value == ""){
+    if (last_name.value == "") {
         errors.push("Debe ingresar el apellido")
         error_last_name.innerHTML = "Debe ingresar el apellido"
         error_last_name.classList.remove("escondido")
-    }else{
+    } else {
         error_last_name.classList.add("escondido")
     }
     // Valido que el mesaje fue ingresado
-    if(message.value == ""){
+    if (message.value == "") {
         errors.push("Debe ingresar el mensaje")
         error_message.innerHTML = "Debe ingresar un mensaje"
         error_message.classList.remove("escondido")
-    }else{
+    } else {
         error_message.classList.add("escondido")
     }
 
@@ -80,9 +75,9 @@ function existsErrors(message, last_name, name, error_name, error_last_name, err
         console.log(error)
     });
 
-    if( errors.length > 0){
+    if (errors.length > 0) {
         return true
-    }else{
+    } else {
         return false
     }
 }
