@@ -9,11 +9,11 @@ button {
     margin-top: 10px;
 }
 
-p{
+p {
     color: red;
 }
 
-.escondido{
+.escondido {
     display: none;
 }
 
@@ -27,7 +27,7 @@ p{
 
 } */
 
-button:hover{
+button:hover {
     transform: scale(1.2);
     background-color: rgb(94, 93, 93);
 }
@@ -37,8 +37,8 @@ table {
     margin-top: 50px;
 }
 
-table > tbody > tr > td{
-    background-color: aqua;
+table>tbody>tr>td {
+    background-color: beige;
     padding: 10px;
     margin: 5px;
 }
