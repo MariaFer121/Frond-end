@@ -1,5 +1,5 @@
 import React from "react";
-import '../select/Select.css'
+import '../Select/Select.css'
 
 class Select extends React.Component {
 
@@ -9,7 +9,7 @@ class Select extends React.Component {
 
                 <label>{this.props.name}</label>
 
-                {this.props.items === undefined && (console.log('Hay un elemento select sin datos.'))}
+                {this.props.items === undefined && (console.log('Seleccione Elemento.'))}
 
                 {this.props.items !== undefined && (
                     <select onChange={(e) => { this.props.change(e) }}>
