@@ -28,11 +28,18 @@ let guardar = () => {
         mensajes.push(objeto)
         console.log(mensajes)
 
-        let elemento_response = document.getElementById("response")
-        let cadena = objeto.nombre + " " + objeto.apellido
-        cadena = cadena + " " + objeto.message
+        let elemento_response = document.getElementById("tablabody")
+        let cadena = objeto.nombre + " " + objeto.apellido + "  " + objeto.message
 
-        elemento_response.innerHTML = cadena
+        //Tarea
+        var addRow = document.createElement("TR")
+        addRow.innerHTML = cadena
+        elemento_response.appendChild(addRow)
+
+        //Limpieza 
+        nombre.value = ""
+        apellido.value = ""
+        message.value = ""
 
     }
 
