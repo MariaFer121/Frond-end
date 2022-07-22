@@ -1,0 +1,15 @@
+.ctn-select {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.2rem;
+}
+
+.ctn-select>select {
+    max-width: 100%;
+    width: 60%;
+    box-sizing: border-box;
+}
+
+.ctn-select>select:hover {
+    cursor: pointer;
+}
