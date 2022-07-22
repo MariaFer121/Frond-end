@@ -60,6 +60,19 @@ function Validacion(name, last_name, last_mother_name, age, genero, doctor, erro
     } else {
         error_doctor.classList.add("error")
     }
+    let doc_pacientes_1 = pacientes.filter(pacientes => pacientes.doctor === "1")
+    let doc_pacientes_2 = pacientes.filter(pacientes => pacientes.doctor === "2")
+
+    if (doc_pacientes_1.length >= 2) {
+        errors.push("El doctor no puede atender mas pacientes")
+        error_pacientes.classList.remove("error")
+    } else {
+        error_doctor.classList.add("error")
+    }
+
+    if (doc_pacientes_2.length >= 2) {
+        errors.push("El doctor no puede atender mas pacientes")
+    }
 
     if (errors.length > 0) {
         return true
