@@ -4,15 +4,15 @@
 }
 
 button {
-    background-color: white;
+    background-color: black;
     border: none;
     justify-items: right;
     font-size: 1.5rem;
 }
 
 button:hover {
-    background-color: gray;
-    color: white;
-    border: thin solid blueviolet;
+    background-color: brown;
+    color: black;
+    border: thin solid rgb(23, 146, 85);
     cursor: pointer;
 }
