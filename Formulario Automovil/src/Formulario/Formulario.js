@@ -1,43 +1,63 @@
+import React from "react";
 import Input from '../Input/Input'
-import Select from '../Select/Select'
+import Select from "../Select/Select";
 import Button from '../Button/Button'
-import {useState} from 'react'
-import SelectClass from '../SelectClass/Select'
 
-function Formulario(props){
-
-    const [marca, setMarca] = useState('')
-    const [modelo, setModelo] = useState('')
-
-    let marcas = [{name: 'Hiundai', id: 1}, {name: 'Toyota', id: 2}]
-    let modelos = [{name: 'Cube', id: 1}, {name: 'Elantra', id: 2}]
-
-    let handleChangeMarca = (event) => {
-        setMarca(event.target.value)
-        console.log(marca)
+class Formulario extends React.Component{
+    constructor(props){
+        // Permite obtener los props
+        super(props)
+        // Creamos el objeto estado
+        this.state = {
+            marca: '',
+            modelo: ''
+        }
+        // Enlazamos las funciones a this
+        // this.handleChangeMarca = this.handleChangeMarca.bind(this)
+        // this.handleChangeModelo = this.handleChangeModelo.bind(this)
     }
 
-    let handleChangeModelo = (event) => {
-        setModelo(event.target.value)
+    // Marcas y modelos para selects
+    marcas = [{name: 'Hiundai', id: 1}, {name: 'Toyota', id: 2}]
+    modelos = [{name: 'Cube', id: 1}, {name: 'Elantra', id: 2}]
+
+    // Manejador change Marca
+    handleChangeMarca = (event) => {
+        console.log(event.target.value)
+        this.setState({
+            marca: event.target.value
+        })
     }
 
-    return (
-        <>
-            <Input title="Ingrese patente" type="text" />
-            <Input title="Ingrese año" type="number" />
-            <Select
-                change={handleChangeMarca}
-                name="marca"
-                items={marcas}
-                />
-            <Select
-                change={handleChangeModelo}
-                name="modelo"
-                items={modelos}
-                />
-            <Button />
-        </>
-    )
+    // Manejador change Modelo
+    handleChangeModelo = (event) => {
+        console.log(event.target.value)
+        this.setState({
+            modelo: event.target.value
+        })
+    }
+
+    render(){
+        return (
+            <>
+                {/* Referenciamos marca y modelo desde el estado */}
+                <p>{this.state.marca} --- {this.state.modelo}</p>
+                <Input title="Ingrese patente" type="text" />
+                <Input title="Ingrese año" type="number" />
+                <Select
+                    change={this.handleChangeMarca}
+                    name="marca"
+                    items={this.marcas}
+                    />
+                <Select
+                    change={this.handleChangeModelo}
+                    name="modelo"
+                    items={this.modelos}
+                    />
+                <Button />
+            </>
+        )
+    }
 }
 
 export default Formulario

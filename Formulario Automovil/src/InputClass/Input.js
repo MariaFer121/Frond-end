@@ -1,23 +1,22 @@
-import React from 'react'
+import React from "react";
+import '../input/Inputs.css'
 
 class Input extends React.Component {
 
-    constructor(props){
-        super(props)
-        this.state = {
-            count: 1
-        }
-    }
+    render() {
+        // con la funcion devuelvo el valor del evento capturado en el input
+        /* let handleChange = (event) => {
+            console.log(event.target.value)
+        }; */
 
-    render(){
         return (
-            <>
-                <p>{this.state.count}</p>
-                <input type="text" />
-                <button onClick={() => {this.setState({count: this.state.count+1})}}></button>
-            </>
+            <div className="ctn-inputs">
+                <label>{this.props.name}</label>
+                {/* con onChange = {handleChange] capturo todo cambio que sufra el input */}
+                <input onChange={(e) => { this.props.change(e) }} type={this.props.types === 'text' ? 'text' : 'number'}></input>
+            </div>
         )
     }
-}
+};
 
-export default Input
+export default Input;
