@@ -8,6 +8,7 @@ class Input extends React.Component {
         return (
             <div className="ctn-inputs">
                 <label>{this.props.name}</label>
+
                 <input onChange={(e) => { this.props.change(e) }} type={this.props.types === 'text' ? 'text' : 'number'}></input>
             </div>
         )
