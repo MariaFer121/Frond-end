@@ -1,0 +1,12 @@
+.ctn-inputs {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0.2rem;
+    width: auto;
+}
+
+.ctn-inputs>input {
+    width: 60%;
+    max-width: 100%;
+    box-sizing: border-box;
+}

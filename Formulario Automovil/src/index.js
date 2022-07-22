@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
-import Formulario from './Formulario/Formulario.class'
-// import Input from './Formulario/InputClass/Input'
-import Input from './Input/Input'
-import Test from './Test/Test'
+import Formulario from './Formulario/Formulario'
+import Input from './Formulario/Input/Input'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
