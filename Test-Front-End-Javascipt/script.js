@@ -15,7 +15,32 @@ let guardar = () => {
     let error_doctor = document.getElementById("error_doctor")
     let error_pacientes = document.getElementById("error_pacientes")
 
+    if (Validacion(name, last_name, last_mother_name, age, genero, doctor, error_name, error_last_name, error_last_mother_name, error_age, error_genero, error_doctor, error_pacientes)) {
+    } else {
+        var input = {
+            name: name.value,
+            last_name: last_name.value,
+            last_mother_name: last_mother_name.value,
+            age: age.value,
+            genero: genero.value,
+            doctor: doctor.value
+        }
+        let elementos = document.getElementsByClassName("form")
+        let limpiar = () => {
+            for (let i = 0; i < elementos.length; i++) {
+                elementos[i].value = ""
+                elementos[4].value = "0"
+                elementos[5].value = "0"
+            }
+        }
+
+        pacientes.push(input)
+        alert("PACIENTE AGENDADO CON EXITO")
+        limpiar()
+        console.log(pacientes)
+    }
 }
+
 function Validacion(name, last_name, last_mother_name, age, genero, doctor, error_name, error_last_name, error_last_mother_name, error_age, error_genero, error_doctor) {
     let errors = []
 
