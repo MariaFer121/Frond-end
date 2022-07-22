@@ -1,3 +1,18 @@
+.ctn-button {
+    text-align: right;
+    padding-top: 0.4rem;
+}
+
 button {
-    margin-top: 10px;
+    background-color: white;
+    border: none;
+    justify-items: right;
+    font-size: 1.5rem;
+}
+
+button:hover {
+    background-color: gray;
+    color: white;
+    border: thin solid blueviolet;
+    cursor: pointer;
 }
